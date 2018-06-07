@@ -109,7 +109,24 @@ public class Runner
 		//
 		// 2) Now that you have p, g, a, and b, you can construct a new AESCipher to
 		//		decrypt the message.  Return the result.
-    	
+    	int a = 0;
+    	int b = 0;
+    	boolean aSet = false;
+    	boolean bSet = false;
+    	for(int i = Integer.MIN_VALUE; i <= Integer.MAX_VALUE; i++){
+    		if(aSet && bSet)
+    			break;
+    		if(x == powerThenMod(g,i,p) && !aSet){
+    			a = i;
+    			aSet = true;
+    		}
+    		if(y == powerThenMod(g,i,p) && !bSet){
+    			b = i;
+    			bSet = true;
+    		}
+    	}
+    	AESCipher cipher = new AESCipher(p, g, a, b);
+    	decryptedMessage = cipher.decrypt(message);
     	return decryptedMessage;
     }    
 
