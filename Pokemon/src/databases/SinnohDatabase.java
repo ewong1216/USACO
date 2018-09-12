@@ -1,5 +1,7 @@
 package databases;
 
-public class SinnohDatabase{
+import pokemon.Pokemon;
 
+public class SinnohDatabase{
+	public static final Pokemon[] pokedex = {};
 }
