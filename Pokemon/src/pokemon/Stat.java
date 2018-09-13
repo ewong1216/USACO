@@ -8,10 +8,12 @@ public class Stat{
 	private final int iv = new Random().nextInt(31) + 1;
 	private int ev;
 	private double natureMod;
+	
 	public Stat(int s, int l, int b, double n){
 		stat = s;
 		ev = 0;
 		natureMod = n;
+		base = b;
 		setValue(l);
 	}
 	public void addEv(int e){
