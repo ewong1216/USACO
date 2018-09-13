@@ -11,8 +11,10 @@ public class Pokemon{
 	private final int spDefense = 4;
 	private final int speed = 5;
 	private Stat[] stats;
+	private int[] baseStats;
+	private Nature nature;
 	
-	public Pokemon(){
+	public Pokemon(String name){
 		
 	}
 }
