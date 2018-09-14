@@ -23,6 +23,7 @@ public class Stat{
 		setValue(l);
 	}
 	/**
+	 * Adds EV to the stat, if applicable.
 	 * 
 	 * @param e the value to add to this stat's EV
 	 */
@@ -34,14 +35,21 @@ public class Stat{
 				ev = 252;
 		}
 	}
-	private void setValue(int level){
+	/**
+	 * Updates the value of the stat according to the level.
+	 * @param level the level of the pokemon 
+	 */
+	public void setValue(int level){
 		if(stat == 0){
 			value = (2*base + iv + ev/4) * level / 100 + level + 10;
 		}
 		value = (int) (((2*base + iv + ev/4) * level / 100 + 5) * natureMod);
 	}
-	
-	public int value(){
+	/**
+	 * 
+	 * @return value of the stat
+	 */
+	public int getValue(){
 		return value;
 	}
 }
