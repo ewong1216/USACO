@@ -34,7 +34,7 @@ public abstract class Pokemon{
 		for(int i = 0; i < stats.length; i++)
 			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
 	}
-	
+	public abstract double getTypeModifier(String attackType);
 	public String getName(){
 		return name;
 	}

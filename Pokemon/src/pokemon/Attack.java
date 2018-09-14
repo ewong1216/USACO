@@ -11,4 +11,15 @@ public class Attack{
 		type = t;
 	}
 	
+	public String getName(){
+		return name;
+	}
+	
+	public int getPower(){
+		return power;
+	}
+	
+	public String getType(){
+		return type;
+	}
 }
