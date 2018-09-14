@@ -2,7 +2,7 @@ package pokemon;
 
 import databases.SinnohDatabase;
 
-public class Pokemon{
+public abstract class Pokemon{
 	private String name;
 	private int level;
 	private int pokedexNum;
@@ -34,6 +34,7 @@ public class Pokemon{
 		for(int i = 0; i < stats.length; i++)
 			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
 	}
+	
 	public String getName(){
 		return name;
 	}
