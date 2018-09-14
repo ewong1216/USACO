@@ -9,6 +9,12 @@ public class Stat{
 	private int ev;
 	private double natureMod;
 	
+	/**
+	 * @param s the int that represents which stat
+	 * @param l the level of the pokemon
+	 * @param b the base stat of the pokemon's stat
+	 * @param n the nature modification of the stat	
+	 */
 	public Stat(int s, int l, int b, double n){
 		stat = s;
 		ev = 0;
@@ -16,6 +22,10 @@ public class Stat{
 		base = b;
 		setValue(l);
 	}
+	/**
+	 * 
+	 * @param e the value to add to this stat's EV
+	 */
 	public void addEv(int e){
 		if(ev < 252){
 			if(ev + e <= 252)

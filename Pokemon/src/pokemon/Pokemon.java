@@ -19,7 +19,10 @@ public class Pokemon{
 		level = l;
 		nature = new Nature();
 		for(int i = 0; i < stats.length; i++)
-			stats[i] = new Stat(i,l,baseStats[i],nature.getMods()[i]);
+			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
 		
+	}
+	public int getPokedexNum(){
+		return pokedexNum;
 	}
 }
