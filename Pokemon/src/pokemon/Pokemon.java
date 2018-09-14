@@ -15,8 +15,14 @@ public abstract class Pokemon{
 	private Stat[] stats = new Stat[6];
 	private int[] baseStats;
 	private Nature nature;
-	
-	public Pokemon(String n, int l, int[] bStats){
+	/**
+	 * 
+	 * @param n Pokemon's name
+	 * @param l Level
+	 * @param pokedexNum 
+	 * @param bStats int[] of base stats
+	 */
+	public Pokemon(String n, int l, int pokedexNum, int[] bStats){
 		name = n;
 		level = l;
 		nature = new Nature();
@@ -25,6 +31,12 @@ public abstract class Pokemon{
 			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
 		
 	}
+	
+	/**
+	 * 
+	 * @param pokedexNum
+	 * @param l level
+	 */
 	public Pokemon(int pokedexNum, int l){
 		Pokemon p = SinnohDatabase.pokedex[pokedexNum];
 		name = p.getName();
@@ -35,6 +47,7 @@ public abstract class Pokemon{
 			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
 	}
 	public abstract double getTypeModifier(String attackType);
+	public abstract double getSTABModifier(String attackType);
 	public String getName(){
 		return name;
 	}
