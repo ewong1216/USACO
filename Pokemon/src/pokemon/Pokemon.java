@@ -15,32 +15,33 @@ public abstract class Pokemon{
 	private Stat[] stats = new Stat[6];
 	private int[] baseStats;
 	private Nature nature;
+	private Ability ability;
 	/**
+	 * Should only be used in the Database Class
 	 * 
 	 * @param n Pokemon's name
-	 * @param l Level
+	 * @param Level
 	 * @param pokedexNum 
 	 * @param bStats int[] of base stats
 	 */
-	public Pokemon(String n, int l, int pokedexNum, int[] bStats){
+	public Pokemon(String n, int level, int pokedexNum, int[] bStats){
 		name = n;
-		level = l;
+		this.level = level;
 		nature = new Nature();
 		baseStats = bStats;
 		for(int i = 0; i < stats.length; i++)
 			stats[i] = new Stat(i, level, baseStats[i], nature.getMods()[i]);
-		
 	}
 	
 	/**
-	 * 
+	 * Create an instance of a Pokemon, gets data from database
 	 * @param pokedexNum
-	 * @param l level
+	 * @param level
 	 */
-	public Pokemon(int pokedexNum, int l){
+	public Pokemon(int pokedexNum, int level){
 		Pokemon p = SinnohDatabase.pokedex[pokedexNum];
 		name = p.getName();
-		level = l;
+		this.level = level;
 		nature = p.getNature();
 		baseStats = p.getBaseStats();
 		for(int i = 0; i < stats.length; i++)
