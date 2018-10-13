@@ -1,5 +1,6 @@
 package pokemonTypes;
 
+import abilities.Ability;
 import pokemon.Pokemon;
 
 public class Grass extends Pokemon{
@@ -12,8 +13,8 @@ public class Grass extends Pokemon{
 	 * @param pokedexNum 
 	 * @param bStats int[] of base stats
 	 */
-	public Grass(String n, int level, int pokedexNum, int[] bStats){
-		super(n,level,pokedexNum,bStats);
+	public Grass(String n, int pokedexNum, int[] bStats, Ability a, double gRatio){
+		super(n,pokedexNum,bStats,a,gRatio);
 	}
 	/**
 	 * Creates an instance of a Grass pokemon

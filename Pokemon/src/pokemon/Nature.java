@@ -4,16 +4,17 @@ import java.util.Random;
 
 public class Nature{
 	String name;
-	private final static int attack = 0;
-	private final static int defense = 1;
-	private final static int spAttack = 2;
-	private final static int spDefense = 3;
-	private final static int speed = 4;
-	private double[] statMods = new double[5];
+	private final static int attack = 1;
+	private final static int defense = 2;
+	private final static int spAttack = 3;
+	private final static int spDefense = 4;
+	private final static int speed = 5;
+	private double[] statMods = new double[6];
 	private final static String[] natures = {"Hardy","Docile","Serious","Bashful","Quirky","Lonely","Brave","Adamant","Naughty",
 			"Bold","Relaxed","Impish","Lax","Timid","Hasty","Jolly","Naive","Modest","Mild","Quiet","Rash","Careful",
 			"Sassy","Gentle","Calm"};
 	public Nature(){
+		statMods[0] = 1.0;
 		int r = new Random().nextInt(25);
 		name = natures[r];
 		for(int i = 0; i < statMods.length; i++)
