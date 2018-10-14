@@ -40,10 +40,10 @@ public class Stat{
 	 * @param level the level of the pokemon 
 	 */
 	public void setValue(int level){
-		if(stat == 0){
+		if(stat == 0)
 			value = (2*base + iv + ev/4) * level / 100 + level + 10;
-		}
-		value = (int) (((2*base + iv + ev/4) * level / 100 + 5) * natureMod);
+		else
+			value = (int) (((2*base + iv + ev/4) * level / 100 + 5) * natureMod);
 	}
 	/**
 	 * 
@@ -51,5 +51,22 @@ public class Stat{
 	 */
 	public int getValue(){
 		return value;
+	}
+	public String toString(){
+		String s = "";
+		if(stat == 0)
+			s += "HP: ";
+		else if(stat == 1)
+			s += "Attack: ";
+		else if(stat == 2)
+			s += "Defense: ";
+		else if(stat == 3)
+			s += "Special Attack: ";
+		else if(stat == 4)
+			s += "Special Defense: ";
+		else
+			s += "Speed: ";
+		s += value;
+		return s;
 	}
 }

@@ -73,6 +73,22 @@ public abstract class Pokemon{
 		return s;
 	}
 	
+	public String toString(){
+		String bs = battleString();
+		String s = bs.substring(0,bs.indexOf(":")+2) + curHP + "/" + stats[MAXHP].getValue() + "\n";
+		for(int i = 1; i < 6; i++)
+			s += stats[i].toString() + "\n";
+		return s;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public abstract double getTypeModifier(String at);
 	public abstract double getSTABModifier(String at);
 	public String getName(){
