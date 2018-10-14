@@ -73,8 +73,8 @@ public abstract class Pokemon{
 		return s;
 	}
 	
-	public abstract double getTypeModifier(String attackType);
-	public abstract double getSTABModifier(String attackType);
+	public abstract double getTypeModifier(String at);
+	public abstract double getSTABModifier(String at);
 	public String getName(){
 		return name;
 	}
