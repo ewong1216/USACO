@@ -19,6 +19,7 @@ public class SinnohDatabase{
 			new Water("Piplup",7,new int[]{53,51,53,61,56,40},abSearch("Torrent"),87.5),
 			new Water("Prinplup",8,new int[]{64,66,68,81,76,50},abSearch("Torrent"),87.5),
 			new WaterSteel("Empoleon",9,new int[]{84,86,88,111,101,60},abSearch("Torrent"),87.5)};
+	//Database Pokemon class, so don't need other information.
 	public static final Attack[] ATTACKS = {new Attack("Tackle",35,95,"Normal",0,35,0),new Attack("Withdraw",0,0,"Water",2,40,0)};
 	
 	
