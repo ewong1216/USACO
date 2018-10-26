@@ -32,5 +32,19 @@ public class crypt1{
 		scan.close();
 		bw.close();
 	}
-
+	
+	public static boolean containsInts(String s, int[] nums){
+		for(int i = 0; i < s.length(); i++){
+			if(!arrcontains(Integer.parseInt(s.substring(i, i+1)),nums))
+				return false;
+		}
+		return true;
+	}
+	
+	public static boolean arrcontains(int n, int[] nums){
+		for(int i = 0; i < nums.length; i++)
+			if(n == nums[i])
+				return true;
+		return false;
+	}
 }
