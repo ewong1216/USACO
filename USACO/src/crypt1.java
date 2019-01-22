@@ -13,30 +13,36 @@ import java.util.Scanner;
 
 public class crypt1{
 	public static void main(String[] args) throws IOException{
-		File f = new File("src/crypt1.in");
-		FileWriter fw = new FileWriter("src/crypt1.out");
-		//File f = new File("crypt1.in");
-		//FileWriter fw = new FileWriter("crypt1.out");
-		Scanner scan = new Scanner(f);
-		BufferedWriter bw = new BufferedWriter(fw);
-		int size = Integer.parseInt(scan.nextLine());
-		int[] nums = new int[size];		
-		String numsline = scan.nextLine();
-		for(int count = 0; numsline.contains(" "); count++){
-			nums[count] = Integer.parseInt(numsline.substring(0,1));
-			numsline = numsline.substring(numsline.indexOf(" ") + 1);
+		//String src = "src/";
+		String src = "";
+		Scanner scan = new Scanner(new File(src + "crypt1.in"));
+		BufferedWriter bw = new BufferedWriter(new FileWriter(src + "crypt1.out"));
+		int digitCount = Integer.parseInt(scan.nextLine());
+		int[] nums = new int[digitCount];		
+		String[] numsline = scan.nextLine().split(" ");
+		for(int i = 0; i < digitCount; i++){
+			nums[i] = Integer.parseInt(numsline[i]);
 		}
-		nums[nums.length-1] = Integer.parseInt(numsline);
-		int nMults = numMultiples(nums);		
-		if(nMults == 0){
-			bw.write(0 + "\n");
-			bw.close();
-			return;
+		int solutions = 0;
+		for(int topleft = 0; topleft < digitCount; topleft++){
+			for(int topmid = 0; topmid < digitCount; topmid++){
+				for(int topright = 0; topright < digitCount; topright++){
+					int topNum = 100*nums[topleft] + 10*nums[topmid] + nums[topright];
+					for(int botleft = 0; botleft < digitCount; botleft++){
+						int botsum = nums[botleft] * topNum;
+						if((botsum+"").length() <= 3){
+							for(int botright = 0; botright < digitCount; botright++){
+								int topsum = topNum * nums[botright];
+								if(containsInts(topsum + "",nums) && containsInts(botsum+"",nums) && containsInts(topsum+ 10*botsum +"",nums) && (topsum+"").length() <=3){
+									solutions++;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
-		int[][] mults = getMultiples(nMults, nums);
-		
-		int numsolutions = 0;
-		
+		bw.write(solutions+"\n");
 		scan.close();
 		bw.close();
 	}
@@ -65,7 +71,7 @@ public class crypt1{
 		return mults;
 	}
 	public static boolean containsInts(String s, int[] nums){
-		for(int i = 0; i < s.length(); i++){
+ 		for(int i = 0; i < s.length(); i++){
 			if(!arrcontains(Integer.parseInt(s.substring(i, i+1)),nums))
 				return false;
 		}
