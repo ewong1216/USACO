@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class crypt1{
 	public static void main(String[] args) throws IOException{
+		//git-1540355572653
 		//String src = "src/";
 		String src = "";
 		Scanner scan = new Scanner(new File(src + "crypt1.in"));
