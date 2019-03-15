@@ -12,10 +12,10 @@ LANG: JAVA
 public class wormhole{
 	public static void main(String[] args) throws IOException{
 		//git-1540355572653
-		//String src = "src/";
-		String src = "";
-		Scanner scan = new Scanner(new File(src + "combo.in"));
-		BufferedWriter bw = new BufferedWriter(new FileWriter(src + "combo.out"));
+		String src = "src/";
+		//String src = "";
+		Scanner scan = new Scanner(new File(src + "wormhole.in"));
+		BufferedWriter bw = new BufferedWriter(new FileWriter(src + "wormhole.out"));
 		int n = Integer.parseInt(scan.nextLine());
 		int[] xs = new int[n];
 		int[] ys = new int[n];
@@ -25,5 +25,9 @@ public class wormhole{
 			ys[n] = Integer.parseInt(line[1]);
 		}
 		
+	}
+	
+	public static boolean hasCycle(int[] x, int[] y, int[] paris){
+		throw new UnsupportedOperationException();
 	}
 }
